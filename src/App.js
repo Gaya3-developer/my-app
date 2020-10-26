@@ -7,7 +7,7 @@ class App extends React.Component {
     var task=document.getElementById("task").value;
     if(task!=="")
     {
-    rows+='<td><div class="checkbox-action"><input type="checkbox" id="action5" onClick="this.handleClick("action5","row5", e)"/></div></td>'
+   /* rows+='<td><div class="checkbox-action"><input type="checkbox" id="action5" onClick="this.handleClick("action5","row5", e)"/></div></td>'
     +"<td>"+task+"</td>"
     +'<td><button class="delete-action" onClick="this.deleteAction("row5", e)">Delete</button></td>';
    
@@ -15,7 +15,7 @@ class App extends React.Component {
     var tr = document.createElement("tr");
 
     tr.innerHTML = rows;
-    tbody.appendChild(tr)  
+    tbody.appendChild(tr)  */
     }
   }
   deleteAction = (id,e) => {
