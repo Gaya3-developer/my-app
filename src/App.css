@@ -1,0 +1,80 @@
+.container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}
+@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}
+@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}
+.container-fluid{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}
+.main-wrapper {
+  background: #b0e3e6;
+  padding: 20px;
+  margin-top: 30px;
+  border: 2px solid #6ca0b9;
+}
+.header-container {
+  text-align: center;
+  background: #f7cecc;
+  padding: 10px;
+  border: 2px solid #ae8182;
+}
+.header-container h1{
+  font-size:25px;
+  font-weight:400;
+}
+.task-container {
+  text-align: center;
+  background: #f9d7ab;
+  padding: 10px;
+  border: 2px solid #d5c49e;
+}
+form.add-task{
+  display: flex;
+}
+input#task {
+  padding: 10px;
+  width: 80%;
+  margin-right: 30px;
+}
+.submit {
+  width: 15%;
+  background: #60aa17;
+  color: white;
+  box-shadow: none;
+  border: 1px solid #c7d685;
+}
+.task-list {
+  width: 100%;
+  text-align: center;
+  border-spacing: 0px;
+  margin: 10px 0px;
+}
+.task-list-container {
+  border: 2px solid #6ca0b9;
+  padding: 10px;
+}
+.task-list td {
+  padding: 10px 0px;
+  border: none;
+}
+tr.active {
+  background: #008a00;
+}
+.active .checkbox-action {
+  background: #fde5cb;
+  display: inline;
+
+}
+.active .task-title {
+  background: #e2d4e5;
+  display: inline;
+  float: left;
+}
+.task-title {
+  text-align: left;
+}
+.active .delete-action {
+  background: #fff0ce;
+  padding: 10px;
+  border: 1px solid #4d9723;
+}
+.delete-action{
+  background: none;
+  border: none;
+}
