@@ -1,78 +1,72 @@
 import React from 'react';
 class TaskList extends React.Component {
+  constructor(init){
+    super(init);
+    this.state = {
+      textDecoration: ""
+ }
+    this.handleChange = this.handleChange.bind(this);
+}
+  handleChange({target}){
+    console.log(target.checked);
+    if (target.checked){
+      console.log(target.checked);
+     //  target.removeAttribute('checked');
+      // target.classList ='.task-title';
+     //  console.log(target.classList );
+     //  let element=target.classList;
+     //  element.style.bgColor= "red";""
+     this.setState({textDecoration: "line-through"})
+     console.log(this.state.textDecoration);
+    } else {
+      // target.setAttribute('checked', true);
+      // target.parentNode.style.textDecoration = "line-through";
+      this.setState({textDecoration: ""})
+      console.log(this.state.textDecoration);
+    }
+}
   render() {
+    const items = this.props.items;
+  //  let btn_class = this.state.textDecoration;
+  
       return (
+
         <div className="task-list-container">
-        <table className="task-list">
-        <tbody>
-        <tr className="active" id="row1">
-            <td>
-              <div className="checkbox-action">
-                 <input type="checkbox" id="action1"/>
-              </div>
+           
+            <table className="task-list">
+              <tbody>
+           
+                {
+                     this.props.items.length > 0 ?
+                items.map(item => {
+                  return (
+                    <tr key={item.id}>
+                        <td> <div className="checkbox-action">
+                       
+             
+                 <input type="checkbox"
+                        onChange={this.handleChange}
+                       // defaultChecked={this.state.complete}
+                  />
+            
+                {this.props.text}
+            
+              </div></td>
+                      <td className="task-title" style={ { textDecoration:  this.state.textDecoration  } }>{item.task}</td>
+
+                      <td>
+              <button className="delete-action" onClick={()=>{if(window.confirm('Delete the item?')){this.props.deleteTask(item.id)};}}>Delete</button>
             </td>
-            <td>
-              <div className="task-title">Buy Groceries</div>
-            </td> 
-            <td>
-              <button className="delete-action">Delete</button>
-            </td>
-          </tr>
-          <tr id="row2">
-          <td>
-              <div className="checkbox-action">
-                 <input type="checkbox" id="action2"/>
-              </div>
-            </td>
-            <td>
-              <div className="task-title">Feed Cat</div>
-            </td> 
-            <td>
-              <button className="delete-action">Delete</button>
-            </td>
-      </tr>
-      <tr id="row3">
-          <td>
-              <div className="checkbox-action">
-                 <input type="checkbox" id="action3"/>
-              </div>
-            </td>
-            <td>
-              <div className="task-title">Learn React</div>
-            </td> 
-            <td>
-              <button className="delete-action">Delete</button>
-            </td>
-      </tr> 
-      <tr id="row4">
-          <td>
-              <div className="checkbox-action">
-                 <input type="checkbox" id="action4"/>
-              </div>
-            </td>
-            <td>
-              <div className="task-title">Meet Dentist</div>
-            </td> 
-            <td>
-              <button className="delete-action">Delete</button>
-            </td>
-      </tr> 
-      <tr id="row5">
-          <td>
-              <div className="checkbox-action">
-                 <input type="checkbox" id="action5"/>
-              </div>
-            </td>
-            <td>
-              <div className="task-title">Laern Guitar</div>
-            </td> 
-            <td>
-              <button className="delete-action">Delete</button>
-            </td>
-      </tr> 
-          </tbody>
-        </table>
-        </div>
+                    </tr>
+                  );
+                }):<tr><td><p>Not Tasks Found</p></td></tr>
+                
+                }
+                
+              </tbody>
+            </table>
+            
+          </div>
       )
   }
 }

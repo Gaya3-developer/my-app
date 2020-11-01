@@ -1,15 +1,15 @@
 import React from 'react';
-class AddTaskForm extends React.Component {
+class Header extends React.Component {
   render() {
       return (
-        <div className="task-container">
-        <form action="" className="add-task">
-          <input type="text" id="task" name="task" placeholder="Enter Task" required/><br/>
-          <button className="submit">Add</button>
+       <div className="task-container">
+        <form action="" className="add-task" onSubmit={this.props.addTask}>
+          <input type="text" id="task" name="task" placeholder="Enter Task" required value={this.props.taskName}  onChange={this.props.handleInputChange}/><br/>
+          <button type="submit" className="submit">Add</button>
         </form> 
         </div>
       )
   }
 }
 
-export default AddTaskForm;
+export default Header;
